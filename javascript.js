@@ -26,6 +26,10 @@ var getSlashBtn = $("#swordSlash svg");
 var getEagleBtn = $("#eagleVision svg");
 var getStealthBtn = $("#stealthMode svg");
 
+var swordSound = new Audio('./audio/sword.wav');
+var eagleSound = new Audio('./audio/eagle.wav');
+var stealthSound = new Audio('./audio/stealth.wav');
+
 var eagleToggle = 0;
 
 // Hoofd animatie
@@ -84,6 +88,11 @@ tlCape.to(cape, .75, {
 });
 
 function armSlash() {
+    
+    setTimeout(function(){
+        playSwordSound();
+    },350);
+    
     var tlArmSlash = new TimelineMax({ repeat: 0, paused: false, yoyo: false });
     
     // Arm Slash
@@ -131,6 +140,12 @@ function eagleVision2() {
         getEagle.style.opacity = "0";
         eagleToggle = 0;
     }
+    
+    setTimeout(function(){
+        playEagleSound();
+    },350);
+    
+    var tlArmSlash = new TimelineMax({ repeat: 0, paused: false, yoyo: false });
     
     var tlFlame1 = new TimelineMax({ repeat: -1, paused: false, yoyo: true });
     var tlFlame2 = new TimelineMax({ repeat: -1, paused: false, yoyo: true });
@@ -194,6 +209,9 @@ function eagleVision2() {
 }
 
 function stealthMode2() {
+    setTimeout(function(){
+        playStealthSound();
+    },350);
     
     var getAssassin = document.getElementById("assassin");
     getAssassin.style.opacity = ".7";
@@ -344,7 +362,7 @@ function stealthMode2() {
 // Buttons
 
 function slashButton2() {
-    
+        
     var tlSlashBtn = new TimelineMax({ repeat: 0, paused: false, yoyo: false });
     
     tlSlashBtn.to(getSlashBtn, 1, {
@@ -428,6 +446,17 @@ function stealthButton2() {
     });   
 }
 
+function playSwordSound(){
+  swordSound.play();
+}
+
+function playEagleSound(){
+  eagleSound.play();
+}
+
+function playStealthSound(){
+  stealthSound.play();
+}
 
 swordSlash.addEventListener('click', function() {
     armSlash();
@@ -444,6 +473,9 @@ getSlashBtn.addEventListener('mouseover', function() {
 });
 getEagleBtn.addEventListener('mouseover', function() {
     eagleButton2();
+});
+getStealthBtn.addEventListener('mouseover', function() {
+    stealthButton2();
 });
 getStealthBtn.addEventListener('mouseover', function() {
     stealthButton2();
