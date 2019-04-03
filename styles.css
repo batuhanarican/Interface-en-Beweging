@@ -1,0 +1,83 @@
+body {
+  background: #000816;
+    padding: 0;
+    margin: 0;
+}
+
+div.assassin {
+    position: absolute;
+/*    margin-top: 40px;*/
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+/*    left: 60px;*/
+}
+
+div.assassin svg {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 200px);
+    margin-top: 40px;
+    margin-left: -80px;
+}
+
+.flames {
+    filter: hue-rotate(-140deg) brightness(1.2) drop-shadow(12px 12px 25px rgba(0,200,255,1.0));
+    transition: 1s;
+}
+
+#Eagle_vision {
+    transition: 1s;
+}
+
+#Eye_glow, #Flame1, #Flame2 {
+    opacity: 0;
+}
+
+
+div.b-container {
+    position: absolute;
+    width: 100%;
+    height: 75px;
+    bottom: 50px;
+}
+
+ul.buttons {
+    background: #f9f9f9;
+    position: relative;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    width: 320px;
+    list-style-type: none;
+    box-shadow: 5px 5px gray;
+}
+
+ul.buttons li  {
+    position: relative;
+    margin: auto;
+}
+
+ul.buttons li button {
+    background: #eaeaea;
+    height: 80px;
+    width: 80px;
+    background-color: ;
+    border: 0;
+    border-radius: 999px;
+    margin: 10px 10px;
+    transition: .5s;
+}
+
+ul.buttons li button:hover {
+    background: rgba(0,100,150,.9);
+    transition: .5s;
+}
+
+ul.buttons li button svg {
+    filter: brightness(1.0) drop-shadow(2px 2px 0px rgba(24,108,122,0.2));
+}
+
+#Slash {
+    opacity: 0;
+}
